@@ -13,6 +13,7 @@ namespace BLL.Services
         ItemConverter conv = new ItemConverter();
 
         DALFacade facade;
+
         public ItemService(DALFacade facade)
         {
             this.facade = facade;
@@ -64,7 +65,7 @@ namespace BLL.Services
                 var itemFromDb = uow.ItemRepo.Get(i.Id);
                 if (itemFromDb == null)
                 {
-                    throw new InvalidOperationException("Video not found");
+                    throw new InvalidOperationException("Item not found");
                 }
                 itemFromDb.Name = i.Name;
 

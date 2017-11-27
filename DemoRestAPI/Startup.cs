@@ -51,11 +51,17 @@ namespace CustomerRestAPI
                 app.UseDeveloperExceptionPage();
                 var facade = new BLLFacade();
 
-                facade.ItemService.Create(
-                    new ItemBO()
-                    {
-                        Name = "Vodka"
-                    });
+                //facade.ItemService.Create(
+                //    new ItemBO()
+                //    {
+                //        Name = "Somersby"
+                //    });
+                //facade.ItemTypeService.Create(
+                //    new ItemTypeBO()
+                //    {
+                //        Name = "Cyder"
+                //    }
+                //    );
 
 
 

@@ -7,6 +7,7 @@ namespace DAL
     public interface IUnitOfWork : IDisposable
     {
         IItemRepo ItemRepo { get; }
+        IItemTypeRepo ItemTypeRepo { get; }
 
         int Complete();
     }

@@ -14,5 +14,10 @@ namespace BLL
         {
             get { return new ItemService(new DALFacade()); }
         }
+
+        public IItemTypeService ItemTypeService
+        {
+            get { return new ItemTypeService(new DALFacade()); }
+        }
     }
 }

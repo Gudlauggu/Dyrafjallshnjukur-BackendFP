@@ -47,7 +47,7 @@ namespace AppRestAPI.Controllers
         {
             if (id != i.Id)
             {
-                return BadRequest("Path ID does not match video ID in json object");
+                return BadRequest("Path ID does not match item ID in json object");
             }
 
             try

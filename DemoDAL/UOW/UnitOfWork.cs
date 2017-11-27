@@ -8,6 +8,7 @@ namespace DAL.UOW
     public class UnitOfWork : IUnitOfWork
     {
         public IItemRepo ItemRepo { get; internal set; }
+        public IItemTypeRepo ItemTypeRepo { get; internal set; }
        
         private Context.Context context;
 
@@ -16,6 +17,7 @@ namespace DAL.UOW
             context = new Context.Context();
             context.Database.EnsureCreated();
             ItemRepo = new ItemRepo(context);
+            ItemTypeRepo = new ItemTypeRepo(context);
         }
 
 
