@@ -8,6 +8,9 @@ namespace DAL
     {
         IItemRepo ItemRepo { get; }
         IItemTypeRepo ItemTypeRepo { get; }
+        IPubRepo PubRepo { get; }
+        ISupplierRepo SupplierRepo { get; }
+
 
         int Complete();
     }

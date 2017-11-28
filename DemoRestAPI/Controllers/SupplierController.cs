@@ -12,47 +12,48 @@ namespace AppRestAPI.Controllers
     [EnableCors("MyPolicy")]
     [Produces("application/json")]
     [Route("api/[controller]")]
-    public class ItemController : Controller
+    public class SupplierController : Controller
     {
         BLLFacade facade = new BLLFacade();
 
-        // GET: api/Item
+        // GET: api/supplier
         [HttpGet]
-        public IEnumerable<ItemBO> Get()
+        public IEnumerable<SupplierBO> Get()
         {
-            return facade.ItemService.GetAll();
+            return facade.SupplierService.GetAll();
         }
 
-        // GET: api/Item/5
-        [HttpGet("{id}", Name = "GetItem")]
-        public ItemBO Get(int id)
+        // GET: api/supplier/5
+        [HttpGet("{id}", Name = "GetSupplier")]
+        public SupplierBO Get(int id)
         {
-            return facade.ItemService.Get(id);
+            return facade.SupplierService.Get(id);
         }
 
-        // POST: api/Item
+        // POST: api/supplier
         [HttpPost]
-        public IActionResult Post([FromBody]ItemBO i)
+        public IActionResult Post([FromBody]SupplierBO s)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            return Ok(facade.ItemService.Create(i));
+            return Ok(facade.SupplierService.Create(s));
+
         }
 
-        // PUT: api/Item/5
+        // PUT: api/supplier/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]ItemBO i)
+        public IActionResult Put(int id, [FromBody]SupplierBO s)
         {
-            if (id != i.Id)
+            if (id != s.Id)
             {
-                return BadRequest("Path ID does not match item ID in json object");
+                return BadRequest("Path ID does not match supplier ID in json object");
             }
 
             try
             {
-                return Ok(facade.ItemService.Update(i));
+                return Ok(facade.SupplierService.Update(s));
             }
             catch (InvalidOperationException e)
             {
@@ -67,7 +68,7 @@ namespace AppRestAPI.Controllers
         {
             try
             {
-                return Ok(facade.ItemService.Delete(id));
+                return Ok(facade.SupplierService.Delete(id));
             }
             catch (InvalidOperationException e)
             {

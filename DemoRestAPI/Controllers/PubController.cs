@@ -12,47 +12,47 @@ namespace AppRestAPI.Controllers
     [EnableCors("MyPolicy")]
     [Produces("application/json")]
     [Route("api/[controller]")]
-    public class ItemController : Controller
+    public class PubController : Controller
     {
         BLLFacade facade = new BLLFacade();
 
-        // GET: api/Item
+        // GET: api/Pub
         [HttpGet]
-        public IEnumerable<ItemBO> Get()
+        public IEnumerable<PubBO> Get()
         {
-            return facade.ItemService.GetAll();
+            return facade.PubService.GetAll();
         }
 
-        // GET: api/Item/5
-        [HttpGet("{id}", Name = "GetItem")]
-        public ItemBO Get(int id)
+        // GET: api/Pub/5
+        [HttpGet("{id}", Name = "GetPub")]
+        public PubBO Get(int id)
         {
-            return facade.ItemService.Get(id);
+            return facade.PubService.Get(id);
         }
 
-        // POST: api/Item
+        // POST: api/Pub
         [HttpPost]
-        public IActionResult Post([FromBody]ItemBO i)
+        public IActionResult Post([FromBody]PubBO p)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            return Ok(facade.ItemService.Create(i));
+            return Ok(facade.PubService.Create(p));
         }
 
-        // PUT: api/Item/5
+        // PUT: api/Pub/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]ItemBO i)
+        public IActionResult Put(int id, [FromBody]PubBO p)
         {
-            if (id != i.Id)
+            if (id != p.Id)
             {
-                return BadRequest("Path ID does not match item ID in json object");
+                return BadRequest("Path ID does not match pub ID in json object");
             }
 
             try
             {
-                return Ok(facade.ItemService.Update(i));
+                return Ok(facade.PubService.Update(p));
             }
             catch (InvalidOperationException e)
             {
@@ -67,7 +67,7 @@ namespace AppRestAPI.Controllers
         {
             try
             {
-                return Ok(facade.ItemService.Delete(id));
+                return Ok(facade.PubService.Delete(id));
             }
             catch (InvalidOperationException e)
             {

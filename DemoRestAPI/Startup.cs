@@ -62,6 +62,23 @@ namespace CustomerRestAPI
                 //        Name = "Cyder"
                 //    }
                 //    );
+                //facade.PubService.Create(
+                //    new PubBO()
+                //    {
+                //        Name = "Esbjerg City",
+                //        Address = "Bobparkerway 52"
+                //    }
+                //    );
+                //facade.SupplierService.Create(
+                //    new SupplierBO()
+                //    {
+                //        Name = "Vodka supplier",
+                //        Address = "Beercity 8C",
+                //        PhoneNumber = 66332288,
+                //        Email = "email@email.com"
+                //    }
+                //    );
+
 
 
 

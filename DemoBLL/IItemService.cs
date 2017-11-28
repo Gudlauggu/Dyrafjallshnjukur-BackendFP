@@ -7,12 +7,12 @@ namespace BLL
 {
     public interface IItemService
     {
-        ItemBO Create(ItemBO vid);
+        ItemBO Create(ItemBO i);
 
         List<ItemBO> GetAll();
         ItemBO Get(int Id);
 
-        ItemBO Update(ItemBO vid);
+        ItemBO Update(ItemBO i);
 
         ItemBO Delete(int Id);
     }

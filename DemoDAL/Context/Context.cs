@@ -27,6 +27,8 @@ namespace DAL.Context
 
         public DbSet<Item> Item { get; set; }
         public DbSet<ItemType> ItemType { get; set; }
+        public DbSet<Pub> Pub { get; set; }
+        public DbSet<Supplier> Supplier { get; set; }
 
     }
 }
