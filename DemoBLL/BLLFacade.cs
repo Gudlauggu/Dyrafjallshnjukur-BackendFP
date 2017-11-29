@@ -29,5 +29,9 @@ namespace BLL
         {
             get { return new SupplierService(new DALFacade()); }
         }
+        public IOrderService OrderService
+        {
+            get { return new OrderService(new DALFacade());  }
+        }
     }
 }

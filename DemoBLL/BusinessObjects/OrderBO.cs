@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DAL.Entities
+namespace BLL.BusinessObjects
 {
-    public class Order
+    public class OrderBO
     {
         public int Id { get; set; }
         public DateTime OrderDate { get; set; }
