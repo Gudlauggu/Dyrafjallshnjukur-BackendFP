@@ -52,40 +52,40 @@ namespace CustomerRestAPI
                 app.UseDeveloperExceptionPage();
                 var facade = new BLLFacade();
 
-                facade.ItemService.Create(
-                    new ItemBO()
-                    {
-                        Name = "Somersby"
-                    });
-                facade.ItemTypeService.Create(
-                    new ItemTypeBO()
-                    {
-                        Name = "Cyder"
-                    }
-                    );
-                facade.PubService.Create(
-                    new PubBO()
-                    {
-                        Name = "Esbjerg City",
-                        Address = "Bobparkerway 52"
-                    }
-                    );
-                facade.SupplierService.Create(
-                    new SupplierBO()
-                    {
-                        Name = "Vodka supplier",
-                        Address = "Beercity 8C",
-                        PhoneNumber = 66332288,
-                        Email = "email@email.com"
-                    }
-                    );
-                facade.OrderService.Create(
-                    new OrderBO()
-                    {
-                        OrderDate = DateTime.Now,
-                        DeliveryDate = DateTime.Now.AddDays(30),
-                        OrderPrice = 10000000
-                    });
+                //facade.ItemService.Create(
+                //    new ItemBO()
+                //    {
+                //        Name = "Somersby"
+                //    });
+                //facade.ItemTypeService.Create(
+                //    new ItemTypeBO()
+                //    {
+                //        Name = "Cyder"
+                //    }
+                //    );
+                //facade.PubService.Create(
+                //    new PubBO()
+                //    {
+                //        Name = "Esbjerg City",
+                //        Address = "Bobparkerway 52"
+                //    }
+                //    );
+                //facade.SupplierService.Create(
+                //    new SupplierBO()
+                //    {
+                //        Name = "Vodka supplier",
+                //        Address = "Beercity 8C",
+                //        PhoneNumber = 66332288,
+                //        Email = "email@email.com"
+                //    }
+                //    );
+                //facade.OrderService.Create(
+                //    new OrderBO()
+                //    {
+                //        OrderDate = DateTime.Now,
+                //        DeliveryDate = DateTime.Now.AddDays(30),
+                //        OrderPrice = 10000000
+                //    });
 
 
 
