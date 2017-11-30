@@ -9,7 +9,7 @@ namespace DAL
     {
         Supplier Create(Supplier s);
 
-        List<Supplier> GetAll();
+        IEnumerable<Supplier> GetAll();
         Supplier Get(int Id);
 
         Supplier Delete(int Id);

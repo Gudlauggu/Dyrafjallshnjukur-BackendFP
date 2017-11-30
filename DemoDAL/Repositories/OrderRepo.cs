@@ -34,7 +34,7 @@ namespace DAL.Repositories
             return this.context.Order.FirstOrDefault(x => x.Id == Id);
         }
 
-        public List<Order> GetAll()
+        public IEnumerable<Order> GetAll()
         {
             return this.context.Order.ToList();
         }

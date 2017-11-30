@@ -9,7 +9,7 @@ namespace DAL
     {
         Item Create(Item i);
 
-        List<Item> GetAll();
+        IEnumerable<Item> GetAll();
         Item Get(int Id);
 
         Item Delete(int Id);

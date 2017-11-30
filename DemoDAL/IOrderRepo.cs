@@ -8,7 +8,7 @@ namespace DAL
     public interface IOrderRepo
     {
         Order Create(Order order);
-        List<Order> GetAll();
+        IEnumerable<Order> GetAll();
         Order Get(int Id);
 
         Order Delete(int Id);

@@ -33,7 +33,7 @@ namespace DAL.Repositories
             return this.context.Pub.FirstOrDefault(x => x.Id == Id);
         }
 
-        public List<Pub> GetAll()
+        public IEnumerable<Pub> GetAll()
         {
             return this.context.Pub.ToList();
         }

@@ -35,7 +35,7 @@ namespace DAL.Repositories
             return this.context.ItemType.FirstOrDefault(x => x.Id == Id);
         }
 
-        public List<ItemType> GetAll()
+        public IEnumerable<ItemType> GetAll()
         {
             return this.context.ItemType.ToList();
         }

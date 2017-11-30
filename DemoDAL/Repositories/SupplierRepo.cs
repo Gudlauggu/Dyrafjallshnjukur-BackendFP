@@ -33,7 +33,7 @@ namespace DAL.Repositories
             return this.context.Supplier.FirstOrDefault(x => x.Id == Id);
         }
 
-        public List<Supplier> GetAll()
+        public IEnumerable<Supplier> GetAll()
         {
             return this.context.Supplier.ToList();
         }

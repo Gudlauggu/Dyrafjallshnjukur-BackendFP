@@ -9,7 +9,7 @@ namespace DAL
     {
         Pub Create(Pub p);
 
-        List<Pub> GetAll();
+        IEnumerable<Pub> GetAll();
         Pub Get(int Id);
 
         Pub Delete(int Id);
