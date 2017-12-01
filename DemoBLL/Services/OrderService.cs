@@ -44,6 +44,7 @@ namespace BLL.Services
             using (var uow = facade.UnitOfWork)
             {
                 var newOrder = uow.OrderRepo.Get(Id);
+                newOrder.Pub = uow.PubRepo.Get(newOrder.PubId);
                 return conv.Convert(newOrder);
             }
         }
@@ -71,6 +72,8 @@ namespace BLL.Services
                 
 
                 uow.Complete();
+                newOrder.Pub = uow.PubRepo.Get(newOrder.PubId);
+
                 return conv.Convert(newOrder);
             }
         }

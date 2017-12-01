@@ -63,7 +63,7 @@ namespace CustomerRestAPI
                 //        Name = "Cyder"
                 //    }
                 //    );
-                //facade.PubService.Create(
+                //var pub = facade.PubService.Create(
                 //    new PubBO()
                 //    {
                 //        Name = "Esbjerg City",
@@ -84,7 +84,8 @@ namespace CustomerRestAPI
                 //    {
                 //        OrderDate = DateTime.Now,
                 //        DeliveryDate = DateTime.Now.AddDays(30),
-                //        OrderPrice = 10000000
+                //        OrderPrice = 10000000,
+                //        PubId = pub.Id
                 //    });
 
 
