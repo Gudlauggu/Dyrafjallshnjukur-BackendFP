@@ -14,7 +14,8 @@ namespace BLL.Converters
             return new Item()
             {
                 Id = i.Id,
-                Name = i.Name
+                Name = i.Name,
+                OrderId = i.OrderId  
             };
 
         }
@@ -25,7 +26,9 @@ namespace BLL.Converters
             return new ItemBO()
             {
                 Id = i.Id,
-                Name = i.Name
+                Name = i.Name,
+                OrderId = i.OrderId,
+                Order = new OrderConverter().Convert(i.Order)
             };
         }
     }

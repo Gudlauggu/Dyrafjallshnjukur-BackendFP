@@ -52,17 +52,7 @@ namespace CustomerRestAPI
                 app.UseDeveloperExceptionPage();
                 var facade = new BLLFacade();
 
-                //facade.ItemService.Create(
-                //    new ItemBO()
-                //    {
-                //        Name = "Somersby"
-                //    });
-                //facade.ItemTypeService.Create(
-                //    new ItemTypeBO()
-                //    {
-                //        Name = "Cyder"
-                //    }
-                //    );
+                
                 //var pub = facade.PubService.Create(
                 //    new PubBO()
                 //    {
@@ -79,7 +69,7 @@ namespace CustomerRestAPI
                 //        Email = "email@email.com"
                 //    }
                 //    );
-                //facade.OrderService.Create(
+                //var order = facade.OrderService.Create(
                 //    new OrderBO()
                 //    {
                 //        OrderDate = DateTime.Now,
@@ -87,6 +77,18 @@ namespace CustomerRestAPI
                 //        OrderPrice = 10000000,
                 //        PubId = pub.Id
                 //    });
+                //facade.ItemService.Create(
+                //    new ItemBO()
+                //    {
+                //        Name = "Somersby",
+                //        OrderId = order.Id
+                //    });
+                //facade.ItemTypeService.Create(
+                //    new ItemTypeBO()
+                //    {
+                //        Name = "Cyder"
+                //    }
+                //    );
 
 
 

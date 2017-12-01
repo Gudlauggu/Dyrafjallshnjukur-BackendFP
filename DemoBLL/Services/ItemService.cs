@@ -44,7 +44,7 @@ namespace BLL.Services
             using (var uow = facade.UnitOfWork)
             {
                 var itemEntity = uow.ItemRepo.Get(Id);
-                //videoEntity.Genre = uow.GenreRepository.Get(videoEntity.GenreId);
+                itemEntity.Order = uow.OrderRepo.Get(itemEntity.OrderId);
                 return conv.Convert(itemEntity);
             }
         }
@@ -70,6 +70,7 @@ namespace BLL.Services
                 itemFromDb.Name = i.Name;
 
                 uow.Complete();
+                itemFromDb.Order = uow.OrderRepo.Get(itemFromDb.OrderId);
                 return conv.Convert(itemFromDb);
             }
         }
