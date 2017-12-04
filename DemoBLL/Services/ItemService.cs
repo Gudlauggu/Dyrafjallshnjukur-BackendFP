@@ -45,6 +45,7 @@ namespace BLL.Services
             {
                 var itemEntity = uow.ItemRepo.Get(Id);
                 itemEntity.Order = uow.OrderRepo.Get(itemEntity.OrderId);
+                itemEntity.ItemType = uow.ItemTypeRepo.Get(itemEntity.ItemTypeId);
                 return conv.Convert(itemEntity);
             }
         }
@@ -71,6 +72,7 @@ namespace BLL.Services
 
                 uow.Complete();
                 itemFromDb.Order = uow.OrderRepo.Get(itemFromDb.OrderId);
+                itemFromDb.ItemType = uow.ItemTypeRepo.Get(itemFromDb.ItemTypeId);
                 return conv.Convert(itemFromDb);
             }
         }

@@ -15,7 +15,8 @@ namespace BLL.Converters
             {
                 Id = i.Id,
                 Name = i.Name,
-                OrderId = i.OrderId  
+                OrderId = i.OrderId,  
+                ItemTypeId = i.ItemTypeId
             };
 
         }
@@ -28,7 +29,9 @@ namespace BLL.Converters
                 Id = i.Id,
                 Name = i.Name,
                 OrderId = i.OrderId,
-                Order = new OrderConverter().Convert(i.Order)
+                Order = new OrderConverter().Convert(i.Order),
+                ItemTypeId = i.ItemTypeId,
+                ItemType = new ItemTypeConverter().Convert(i.ItemType)
             };
         }
     }
