@@ -16,6 +16,15 @@ namespace DAL.Context
         {
             
         }*/
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //Define Item relation with ItemType
+            modelBuilder.Entity<Item>()
+                .HasOne(i => i.IType)
+                .WithMany(it => it.Items)
+                .HasForeignKey(it => it.IType);
+
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -30,6 +39,8 @@ namespace DAL.Context
         public DbSet<Pub> Pub { get; set; }
         public DbSet<Supplier> Supplier { get; set; }
         public DbSet<Order>  Order { get; set; }
+
+        
 
     }
 }
