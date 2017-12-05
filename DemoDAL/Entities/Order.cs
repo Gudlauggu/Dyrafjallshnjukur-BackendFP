@@ -13,7 +13,5 @@ namespace DAL.Entities
 
         public int PubId { get; set; }
         public Pub Pub { get; set; }
-
-        public ICollection<Item> Items { get; set; }
     }
 }

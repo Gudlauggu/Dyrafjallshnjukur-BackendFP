@@ -17,13 +17,15 @@ namespace BLL.Converters
                 DeliveryDate = o.DeliveryDate,
                 OrderDate = o.OrderDate,
                 OrderPrice = o.OrderPrice,
-                PubId = o.PubId
+                PubId = o.PubId,
             };
         }
 
         internal OrderBO Convert(Order o)
         {
             if (o == null) { return null; }
+            List<ItemBO> ItemsBO = new List<ItemBO>();
+            
             return new OrderBO()
             {
                 Id = o.Id,
@@ -32,7 +34,8 @@ namespace BLL.Converters
                 OrderPrice = o.OrderPrice,
 
                 PubId = o.PubId,
-                Pub = new PubConverter().Convert(o.Pub)
+                Pub = new PubConverter().Convert(o.Pub),
+                
             };
         }
     }

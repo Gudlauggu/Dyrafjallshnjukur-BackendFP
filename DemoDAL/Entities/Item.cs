@@ -9,10 +9,7 @@ namespace DAL.Entities
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public int OrderId { get; set; }
-        public Order Order { get; set; }
-
-        public int ItemTypeId { get; set; }
-        public ItemType ItemType { get; set; }
+        public int ITypeId { get; set; }
+        public ItemType IType { get; set; }
     }
 }

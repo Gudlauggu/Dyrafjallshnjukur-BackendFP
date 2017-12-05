@@ -14,9 +14,6 @@ namespace BLL.BusinessObjects
         [MinLength(2)]
         public string Name { get; set; }
 
-        public int OrderId { get; set; }
-        public OrderBO Order { get; set; }
-
         public int ItemTypeId { get; set; }
         public ItemTypeBO ItemType { get; set; }
     }

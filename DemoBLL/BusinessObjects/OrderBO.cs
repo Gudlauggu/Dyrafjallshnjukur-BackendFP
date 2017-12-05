@@ -13,5 +13,6 @@ namespace BLL.BusinessObjects
 
         public int PubId { get; set; }
         public PubBO Pub { get; set; }
+        
     }
 }
