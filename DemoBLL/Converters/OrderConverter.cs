@@ -17,6 +17,7 @@ namespace BLL.Converters
                 DeliveryDate = o.DeliveryDate,
                 OrderDate = o.OrderDate,
                 OrderPrice = o.OrderPrice,
+                Supplier = o.Supplier,
                 PubId = o.PubId,
             };
         }
@@ -32,6 +33,7 @@ namespace BLL.Converters
                 DeliveryDate = o.DeliveryDate,
                 OrderDate = o.OrderDate,
                 OrderPrice = o.OrderPrice,
+                Supplier = o.Supplier,
 
                 PubId = o.PubId,
                 Pub = new PubConverter().Convert(o.Pub),

@@ -10,6 +10,7 @@ namespace DAL.Entities
         public DateTime OrderDate { get; set; }
         public DateTime DeliveryDate { get; set; }
         public int OrderPrice { get; set; }
+        public string Supplier { get; set; }
 
         public int PubId { get; set; }
         public Pub Pub { get; set; }

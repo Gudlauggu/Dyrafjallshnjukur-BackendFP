@@ -53,35 +53,36 @@ namespace CustomerRestAPI
                 var facade = new BLLFacade();
 
 
-                var pub = facade.PubService.Create(
-                    new PubBO()
-                    {
-                        Name = "Esbjerg City",
-                        Address = "Bobparkerway 52"
-                    }
-                    );
-                var itemType = facade.ItemTypeService.Create(
-                   new ItemTypeBO()
-                   {
-                       Name = "Cyder"
-                   }
-                   );
-                var somersby = facade.ItemService.Create(
-                    new ItemBO()
-                    {
-                        Name = "Somersby",
-                        ItemTypeId = itemType.Id
-                    });
+                //var pub = facade.PubService.Create(
+                //    new PubBO()
+                //    {
+                //        Name = "Esbjerg City",
+                //        Address = "Bobparkerway 52"
+                //    }
+                //    );
+                //var itemType = facade.ItemTypeService.Create(
+                //   new ItemTypeBO()
+                //   {
+                //       Name = "Cyder"
+                //   }
+                //   );
+                //var somersby = facade.ItemService.Create(
+                //    new ItemBO()
+                //    {
+                //        Name = "Somersby",
+                //        ItemTypeId = itemType.Id
+                //    });
 
-                var order = facade.OrderService.Create(
-                    new OrderBO()
-                    {
-                        OrderDate = DateTime.Now,
-                        DeliveryDate = DateTime.Now.AddDays(30),
-                        OrderPrice = 10000000,
-                        PubId = pub.Id
-
-                    });
+                //var order = facade.OrderService.Create(
+                //    new OrderBO()
+                //    {
+                //        OrderDate = DateTime.Now,
+                //        DeliveryDate = DateTime.Now.AddDays(30),
+                //        OrderPrice = 10000000,
+                //        Supplier = "SUPPLIER!",
+                //        PubId = pub.Id
+                        
+                //    });
 
 
 

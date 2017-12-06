@@ -58,19 +58,19 @@ namespace BLL.Services
         }
 
 
-        public OrderBO Update(OrderBO p)
+        public OrderBO Update(OrderBO o)
         {
             using (var uow = facade.UnitOfWork)
             {
-                var newOrder = uow.OrderRepo.Get(p.Id);
+                var newOrder = uow.OrderRepo.Get(o.Id);
                 if (newOrder == null)
                 {
                     throw new InvalidOperationException("Order not found");
                 }
-                newOrder.DeliveryDate = p.DeliveryDate;
-                newOrder.OrderDate = p.OrderDate;
-                newOrder.OrderPrice = p.OrderPrice;
-                
+                newOrder.DeliveryDate = o.DeliveryDate;
+                newOrder.OrderDate = o.OrderDate;
+                newOrder.OrderPrice = o.OrderPrice;
+                newOrder.Supplier = o.Supplier;
 
                 uow.Complete();
                 newOrder.Pub = uow.PubRepo.Get(newOrder.PubId);
