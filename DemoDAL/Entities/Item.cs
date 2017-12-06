@@ -8,5 +8,8 @@ namespace DAL.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public int ITypeId { get; set; }
+        public ItemType IType { get; set; }
     }
 }

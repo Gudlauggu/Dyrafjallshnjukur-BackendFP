@@ -13,5 +13,8 @@ namespace BLL.BusinessObjects
         [MaxLength(20)]
         [MinLength(2)]
         public string Name { get; set; }
+
+        public int ItemTypeId { get; set; }
+        public ItemTypeBO ItemType { get; set; }
     }
 }

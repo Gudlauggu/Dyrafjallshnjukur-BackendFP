@@ -44,10 +44,12 @@ namespace BLL.Services
             using (var uow = facade.UnitOfWork)
             {
                 var itemEntity = uow.ItemRepo.Get(Id);
-                //videoEntity.Genre = uow.GenreRepository.Get(videoEntity.GenreId);
+                //itemEntity.Order = uow.OrderRepo.Get(itemEntity.OrderId);
+                itemEntity.IType = uow.ItemTypeRepo.Get(itemEntity.ITypeId);
                 return conv.Convert(itemEntity);
             }
         }
+
 
         public List<ItemBO> GetAll()
         {
@@ -70,6 +72,7 @@ namespace BLL.Services
                 itemFromDb.Name = i.Name;
 
                 uow.Complete();
+                itemFromDb.IType = uow.ItemTypeRepo.Get(itemFromDb.ITypeId);
                 return conv.Convert(itemFromDb);
             }
         }

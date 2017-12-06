@@ -16,19 +16,26 @@ namespace BLL.Converters
                 Id = o.Id,
                 DeliveryDate = o.DeliveryDate,
                 OrderDate = o.OrderDate,
-                OrderPrice = o.OrderPrice
+                OrderPrice = o.OrderPrice,
+                PubId = o.PubId,
             };
         }
 
         internal OrderBO Convert(Order o)
         {
             if (o == null) { return null; }
+            List<ItemBO> ItemsBO = new List<ItemBO>();
+            
             return new OrderBO()
             {
                 Id = o.Id,
                 DeliveryDate = o.DeliveryDate,
                 OrderDate = o.OrderDate,
-                OrderPrice = o.OrderPrice
+                OrderPrice = o.OrderPrice,
+
+                PubId = o.PubId,
+                Pub = new PubConverter().Convert(o.Pub),
+                
             };
         }
     }
