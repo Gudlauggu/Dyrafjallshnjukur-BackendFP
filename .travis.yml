@@ -6,7 +6,7 @@ install:
 - dotnet restore
 script:
 - dotnet build
-- dotnet test Dyrafjallshnjukur-BackendFP.csproj
+
 branches:
   only:
   - master
