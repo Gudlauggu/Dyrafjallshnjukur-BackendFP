@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace CustomerRestAPI
 {
@@ -33,7 +34,13 @@ namespace CustomerRestAPI
         {
             services.AddMvc();
 
-			services.AddCors(o => o.AddPolicy("MyPolicy", builder => {
+            // Register the Swagger generator, defining one or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Old Irish RestAPI", Version = "v1" });
+            });
+
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder => {
 				builder.WithOrigins("http://localhost:4200")
 					   .AllowAnyMethod()
 					   .AllowAnyHeader();
@@ -91,6 +98,14 @@ namespace CustomerRestAPI
 
 
             }
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Old Irish RestAPI V1");
+            });
 
             app.UseMvc();
         }
