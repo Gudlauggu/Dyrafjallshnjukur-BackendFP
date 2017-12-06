@@ -1,2 +1,5 @@
 language: csharp
 solution: Backend-FP.sln
+install:
+  - sudo dosomething
+  - nuget restore Backend-FP.sln
