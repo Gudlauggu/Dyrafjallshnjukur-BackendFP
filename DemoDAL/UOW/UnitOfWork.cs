@@ -10,7 +10,6 @@ namespace DAL.UOW
         public IItemRepo ItemRepo { get; internal set; }
         public IItemTypeRepo ItemTypeRepo { get; internal set; }
         public IPubRepo PubRepo { get; internal set; }
-        public ISupplierRepo SupplierRepo { get; internal set; }
         public IOrderRepo OrderRepo { get; internal set; }
 
        
@@ -25,7 +24,6 @@ namespace DAL.UOW
             ItemRepo = new ItemRepo(context);
             ItemTypeRepo = new ItemTypeRepo(context);
             PubRepo = new PubRepo(context);
-            SupplierRepo = new SupplierRepo(context);
             OrderRepo = new OrderRepo(context);
         }
 

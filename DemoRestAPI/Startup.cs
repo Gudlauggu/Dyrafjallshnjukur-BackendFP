@@ -72,19 +72,19 @@ namespace CustomerRestAPI
                         Name = "Somersby",
                         ItemTypeId = itemType.Id
                     });
-                
-                //var order = facade.OrderService.Create(
-                //    new OrderBO()
-                //    {
-                //        OrderDate = DateTime.Now,
-                //        DeliveryDate = DateTime.Now.AddDays(30),
-                //        OrderPrice = 10000000,
-                //        PubId = pub.Id
-                        
-                //    });
-               
-                
-                
+
+                var order = facade.OrderService.Create(
+                    new OrderBO()
+                    {
+                        OrderDate = DateTime.Now,
+                        DeliveryDate = DateTime.Now.AddDays(30),
+                        OrderPrice = 10000000,
+                        PubId = pub.Id
+
+                    });
+
+
+
 
 
 
