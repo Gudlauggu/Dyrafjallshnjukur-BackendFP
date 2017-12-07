@@ -18,5 +18,7 @@ namespace BLL.BusinessObjects
         [MaxLength(20)]
         [MinLength(5)]
         public string Address { get; set; }
+
+        public List<OrderBO> Orders { get; set; }
     }
 }

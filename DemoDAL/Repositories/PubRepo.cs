@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using DAL.Entities;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repositories
 {
@@ -30,12 +31,12 @@ namespace DAL.Repositories
 
         public Pub Get(int Id)
         {
-            return this.context.Pub.FirstOrDefault(x => x.Id == Id);
+            return this.context.Pub.Include(p => p.Orders).FirstOrDefault(x => x.Id == Id);
         }
 
         public IEnumerable<Pub> GetAll()
         {
-            return this.context.Pub.ToList();
+            return this.context.Pub.Include(p => p.Orders).ToList();
         }
     }
 }

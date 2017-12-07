@@ -11,6 +11,7 @@ namespace BLL.Services
     class PubService : IPubService
     {
         PubConverter conv = new PubConverter();
+        OrderConverter oConv = new OrderConverter();
 
         DALFacade facade;
 
@@ -44,7 +45,10 @@ namespace BLL.Services
             using (var uow = facade.UnitOfWork)
             {
                 var pubEntity = uow.PubRepo.Get(Id);
-                return conv.Convert(pubEntity);
+                var pubBO = conv.Convert(pubEntity);
+                pubBO.Orders = pubEntity.Orders?.Select(oConv.Convert).ToList();
+
+                return pubBO;
             }
         }
 
@@ -52,7 +56,8 @@ namespace BLL.Services
         {
             using (var uow = facade.UnitOfWork)
             {
-                return uow.PubRepo.GetAll().Select(v => conv.Convert(v)).ToList();
+                var pubs = uow.PubRepo.GetAll();
+                return pubs.Select(v => conv.Convert(v)).ToList();
             }
         }
 

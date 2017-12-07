@@ -16,6 +16,7 @@ namespace BLL.Converters
                 Id = p.Id,
                 Name = p.Name,
                 Address = p.Address
+                
             };
         }
 
