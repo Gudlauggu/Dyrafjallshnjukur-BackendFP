@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using Swashbuckle.AspNetCore.Swagger;
+using System.Collections.Generic;
 
 namespace CustomerRestAPI
 {
@@ -60,25 +61,41 @@ namespace CustomerRestAPI
                 var facade = new BLLFacade();
 
 
-                //var pub = facade.PubService.Create(
-                //    new PubBO()
-                //    {
-                //        Name = "Esbjerg City",
-                //        Address = "Bobparkerway 52"
-                //    }
-                //    );
+
                 //var itemType = facade.ItemTypeService.Create(
                 //   new ItemTypeBO()
                 //   {
                 //       Name = "Cyder"
                 //   }
                 //   );
-                //var somersby = facade.ItemService.Create(
+                //var item1 = facade.ItemService.Create(
                 //    new ItemBO()
                 //    {
                 //        Name = "Somersby",
                 //        ItemTypeId = itemType.Id
                 //    });
+                //var item2 = facade.ItemService.Create(
+                //    new ItemBO()
+                //    {
+                //        Name = "Breezer",
+                //        ItemTypeId = itemType.Id
+                //    });
+                //var item3 = facade.ItemService.Create(
+                //    new ItemBO()
+                //    {
+                //        Name = "Mokai",
+                //        ItemTypeId = itemType.Id
+                //    });
+
+
+                //var pub = facade.PubService.Create(
+                //    new PubBO()
+                //    {
+                //        Name = "Esbjerg City",
+                //        Address = "Bobparkerway 52",
+                //        ItemIds = new List<int>() { item1.Id, item2.Id, item3.Id }
+                //    }
+                //    );
 
                 //var order = facade.OrderService.Create(
                 //    new OrderBO()

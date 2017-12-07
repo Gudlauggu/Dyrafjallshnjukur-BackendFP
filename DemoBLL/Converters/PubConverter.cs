@@ -2,6 +2,7 @@
 using DAL.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BLL.Converters
@@ -15,8 +16,12 @@ namespace BLL.Converters
             {
                 Id = p.Id,
                 Name = p.Name,
-                Address = p.Address
-                
+                Address = p.Address,
+                PubItems = p.ItemIds?.Select(i => new PubItem() {
+                    PubId = p.Id,
+                    ItemId = i
+                }
+                ).ToList()
             };
         }
 
@@ -27,7 +32,8 @@ namespace BLL.Converters
             {
                 Id = p.Id,
                 Name = p.Name,
-                Address = p.Address
+                Address = p.Address,
+                ItemIds = p.PubItems?.Select(i => i.ItemId).ToList()
             };
         }
 

@@ -12,6 +12,7 @@ namespace BLL.Services
     {
         PubConverter conv = new PubConverter();
         OrderConverter oConv = new OrderConverter();
+        ItemConverter iConv = new ItemConverter();
 
         DALFacade facade;
 
@@ -46,6 +47,14 @@ namespace BLL.Services
             {
                 var pubEntity = uow.PubRepo.Get(Id);
                 var pubBO = conv.Convert(pubEntity);
+
+                /*pubBO.Items = pubBO.ItemIds?
+                     .Select(id => iConv.Convert(uow.ItemRepo.Get(id)))
+                     .ToList();*/
+                pubBO.Items = uow.ItemRepo.GetAllById(pubBO.ItemIds)
+                    .Select(i => iConv.Convert(i))
+                    .ToList();
+
                 pubBO.Orders = pubEntity.Orders?.Select(oConv.Convert).ToList();
 
                 return pubBO;
@@ -72,9 +81,16 @@ namespace BLL.Services
                 }
                 pubFromDb.Name = p.Name;
                 pubFromDb.Address = p.Address;
+                var pubUpdated = conv.Convert(pubFromDb);
+
+                //pubFromDb.PubItems.RemoveAll(
+                //    pi => pubUpdated.Items.Exists(
+                //        i => i.Id == pi.ItemId &&
+                //        i.PubId
+                //        ))
 
                 uow.Complete();
-                return conv.Convert(pubFromDb);
+                return pubUpdated;
             }
         }
     }

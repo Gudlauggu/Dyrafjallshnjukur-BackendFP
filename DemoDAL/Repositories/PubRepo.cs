@@ -31,12 +31,18 @@ namespace DAL.Repositories
 
         public Pub Get(int Id)
         {
-            return this.context.Pub.Include(p => p.Orders).FirstOrDefault(x => x.Id == Id);
+            return this.context.Pub
+                .Include(p => p.Orders)
+                .Include(p => p.PubItems)
+                .FirstOrDefault(x => x.Id == Id);
         }
 
         public IEnumerable<Pub> GetAll()
         {
-            return this.context.Pub.Include(p => p.Orders).ToList();
+            return this.context.Pub
+                .Include(p => p.Orders)
+                .Include(p => p.PubItems)
+                .ToList();
         }
     }
 }

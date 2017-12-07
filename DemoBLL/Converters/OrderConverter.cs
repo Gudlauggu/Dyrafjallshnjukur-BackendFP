@@ -25,7 +25,6 @@ namespace BLL.Converters
         internal OrderBO Convert(Order o)
         {
             if (o == null) { return null; }
-            List<ItemBO> ItemsBO = new List<ItemBO>();
             
             return new OrderBO()
             {

@@ -16,5 +16,7 @@ namespace BLL.BusinessObjects
 
         public int ItemTypeId { get; set; }
         public ItemTypeBO ItemType { get; set; }
+
+        public List<PubBO> Pubs { get; set; }
     }
 }

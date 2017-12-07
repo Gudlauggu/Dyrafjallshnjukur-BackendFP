@@ -39,5 +39,13 @@ namespace DAL.Repositories
         {
             return this.context.Item.ToList();
         }
+
+        public IEnumerable<Item> GetAllById(List<int> ids)
+        {
+            if (ids == null) return null;
+
+            return this.context.Item.Where(i => ids.Contains(i.Id));
+
+        }
     }
 }

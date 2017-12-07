@@ -20,5 +20,8 @@ namespace BLL.BusinessObjects
         public string Address { get; set; }
 
         public List<OrderBO> Orders { get; set; }
+
+        public List<int> ItemIds { get; set; }
+        public List<ItemBO> Items { get; set; }
     }
 }

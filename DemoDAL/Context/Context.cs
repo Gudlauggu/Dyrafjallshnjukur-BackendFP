@@ -18,11 +18,20 @@ namespace DAL.Context
         }*/
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Define Item relation with ItemType
-            //modelBuilder.Entity<Item>()
-            //    .HasOne(i => i.IType)
-            //    .WithMany(it => it.Items)
-            //    .HasForeignKey(it => it.IType);
+
+            modelBuilder.Entity<PubItem>()
+                .HasKey(pi => new { pi.ItemId, pi.PubId });
+
+            modelBuilder.Entity<PubItem>()
+                .HasOne(pi => pi.Pub)
+                .WithMany(p => p.PubItems)
+                .HasForeignKey(pi => pi.PubId);
+
+            modelBuilder.Entity<PubItem>()
+                .HasOne(pi => pi.Item)
+                .WithMany(i => i.PubItems)
+                .HasForeignKey(pi => pi.ItemId);
+
 
         }
 

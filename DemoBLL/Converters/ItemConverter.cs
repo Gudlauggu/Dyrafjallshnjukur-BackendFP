@@ -15,7 +15,6 @@ namespace BLL.Converters
             {
                 Id = i.Id,
                 Name = i.Name,
-                //OrderId = i.OrderId,  
                 ITypeId = i.ItemTypeId
             };
 
