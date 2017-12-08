@@ -14,5 +14,8 @@ namespace DAL.Entities
 
         public int PubId { get; set; }
         public Pub Pub { get; set; }
+
+        public List<OrderItem> OrderItems { get; set; }
+
     }
 }

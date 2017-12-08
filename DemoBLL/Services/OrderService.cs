@@ -11,6 +11,7 @@ namespace BLL.Services
     class OrderService : IOrderService
     {
         OrderConverter conv = new OrderConverter();
+        ItemConverter iConv = new ItemConverter();
 
         DALFacade facade;
 
@@ -45,7 +46,13 @@ namespace BLL.Services
             {
                 var newOrder = uow.OrderRepo.Get(Id);
                 newOrder.Pub = uow.PubRepo.Get(newOrder.PubId);
-                return conv.Convert(newOrder);
+                var orderBO = conv.Convert(newOrder);
+
+                orderBO.Items = uow.ItemRepo.GetAllById(orderBO.ItemIds)
+                    .Select(i => iConv.Convert(i))
+                    .ToList();
+
+                return orderBO;
             }
         }
 
@@ -62,20 +69,29 @@ namespace BLL.Services
         {
             using (var uow = facade.UnitOfWork)
             {
-                var newOrder = uow.OrderRepo.Get(o.Id);
-                if (newOrder == null)
+                var orderFromDb = uow.OrderRepo.Get(o.Id);
+                if (orderFromDb == null)
                 {
                     throw new InvalidOperationException("Order not found");
                 }
-                newOrder.DeliveryDate = o.DeliveryDate;
-                newOrder.OrderDate = o.OrderDate;
-                newOrder.OrderPrice = o.OrderPrice;
-                newOrder.Supplier = o.Supplier;
+                var orderUpdated = conv.Convert(o);
+                orderFromDb.DeliveryDate = orderUpdated.DeliveryDate;
+                orderFromDb.OrderDate = orderUpdated.OrderDate;
+                orderFromDb.OrderPrice = orderUpdated.OrderPrice;
+                orderFromDb.Supplier = orderUpdated.Supplier;
+
+                orderFromDb.OrderItems.RemoveAll(
+                    oi => !orderUpdated.OrderItems.Exists(
+                          i => i.ItemId == oi.ItemId &&
+                          i.OrderId == oi.OrderId
+                          ));
+                orderFromDb.OrderItems.AddRange(
+                    orderUpdated.OrderItems);
+
 
                 uow.Complete();
-                newOrder.Pub = uow.PubRepo.Get(newOrder.PubId);
-
-                return conv.Convert(newOrder);
+                orderFromDb.Pub = uow.PubRepo.Get(orderFromDb.PubId);
+                return conv.Convert(orderFromDb);
             }
         }
     }

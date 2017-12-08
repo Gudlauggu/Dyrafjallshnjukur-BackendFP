@@ -2,6 +2,7 @@
 using DAL.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BLL.Converters
@@ -19,6 +20,11 @@ namespace BLL.Converters
                 OrderPrice = o.OrderPrice,
                 Supplier = o.Supplier,
                 PubId = o.PubId,
+                OrderItems = o.ItemIds?.Select(i => new OrderItem()
+                {
+                    OrderId = o.Id,
+                    ItemId = i
+                }).ToList()
             };
         }
 
@@ -36,7 +42,8 @@ namespace BLL.Converters
 
                 PubId = o.PubId,
                 Pub = new PubConverter().Convert(o.Pub),
-                
+                ItemIds = o.OrderItems?.Select(i => i.ItemId).ToList()
+
             };
         }
     }

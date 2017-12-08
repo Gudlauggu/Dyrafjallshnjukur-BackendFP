@@ -13,5 +13,7 @@ namespace DAL.Entities
         public ItemType IType { get; set; }
 
         public List<PubItem> PubItems { get; set; }
+
+        public List<OrderItem> OrderItems { get; set; }
     }
 }

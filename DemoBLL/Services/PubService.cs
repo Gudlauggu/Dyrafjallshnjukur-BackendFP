@@ -79,15 +79,16 @@ namespace BLL.Services
                 {
                     throw new InvalidOperationException("Pub not found");
                 }
-                pubFromDb.Name = p.Name;
-                pubFromDb.Address = p.Address;
                 var pubUpdated = conv.Convert(pubFromDb);
+                pubFromDb.Name = pubUpdated.Name;
+                pubFromDb.Address = pubUpdated.Address;
+
 
                 //pubFromDb.PubItems.RemoveAll(
-                //    pi => pubUpdated.Items.Exists(
-                //        i => i.Id == pi.ItemId &&
-                //        i.PubId
-                //        ))
+                //    pi => !pubUpdated.Items.Exists(
+                //        i => i.ItemId == pi.ItemId &&
+                //        i.PubId == pi.PubId
+                //        ));
 
                 uow.Complete();
                 return pubUpdated;

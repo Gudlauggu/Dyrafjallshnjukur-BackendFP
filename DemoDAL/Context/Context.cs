@@ -33,6 +33,20 @@ namespace DAL.Context
                 .HasForeignKey(pi => pi.ItemId);
 
 
+            modelBuilder.Entity<OrderItem>()
+                .HasKey(oi => new { oi.ItemId, oi.OrderId });
+
+            modelBuilder.Entity<OrderItem>()
+                .HasOne(oi => oi.Order)
+                .WithMany(o => o.OrderItems)
+                .HasForeignKey(oi => oi.OrderId);
+
+            modelBuilder.Entity<OrderItem>()
+                .HasOne(oi => oi.Item)
+                .WithMany(i => i.OrderItems)
+                .HasForeignKey(oi => oi.ItemId);
+
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

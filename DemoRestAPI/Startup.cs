@@ -104,7 +104,8 @@ namespace CustomerRestAPI
                 //        DeliveryDate = DateTime.Now.AddDays(30),
                 //        OrderPrice = 10000000,
                 //        Supplier = "SUPPLIER!",
-                //        PubId = pub.Id
+                //        PubId = pub.Id,
+                //        ItemIds = new List<int>() { item1.Id, item2.Id, item3.Id }
 
                 //    });
 

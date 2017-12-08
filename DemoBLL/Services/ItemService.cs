@@ -55,7 +55,6 @@ namespace BLL.Services
         {
             using (var uow = facade.UnitOfWork)
             {
-                //return uow.VideoRepository.GetAll();
                 return uow.ItemRepo.GetAll().Select(v => conv.Convert(v)).ToList();
             }
         }

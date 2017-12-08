@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using DAL.Entities;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repositories
 {
@@ -31,7 +32,9 @@ namespace DAL.Repositories
 
         public Order Get(int Id)
         {
-            return this.context.Order.FirstOrDefault(x => x.Id == Id);
+            return this.context.Order
+                .Include(o => o.OrderItems)
+                .FirstOrDefault(x => x.Id == Id);
         }
 
         public IEnumerable<Order> GetAll()

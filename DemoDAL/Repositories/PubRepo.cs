@@ -40,7 +40,6 @@ namespace DAL.Repositories
         public IEnumerable<Pub> GetAll()
         {
             return this.context.Pub
-                .Include(p => p.Orders)
                 .Include(p => p.PubItems)
                 .ToList();
         }

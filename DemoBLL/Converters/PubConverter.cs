@@ -20,8 +20,7 @@ namespace BLL.Converters
                 PubItems = p.ItemIds?.Select(i => new PubItem() {
                     PubId = p.Id,
                     ItemId = i
-                }
-                ).ToList()
+                }).ToList()
             };
         }
 

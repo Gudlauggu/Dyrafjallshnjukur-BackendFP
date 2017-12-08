@@ -14,6 +14,8 @@ namespace BLL.BusinessObjects
 
         public int PubId { get; set; }
         public PubBO Pub { get; set; }
-        
+
+        public List<int> ItemIds { get; set; }
+        public List<ItemBO> Items { get; set; }
     }
 }
