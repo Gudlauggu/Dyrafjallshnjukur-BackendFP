@@ -10,6 +10,7 @@ namespace DAL
         IItemTypeRepo ItemTypeRepo { get; }
         IPubRepo PubRepo { get; }
         IOrderRepo OrderRepo { get; }
+        IProfileRepo ProfileRepo { get; }
 
 
         int Complete();

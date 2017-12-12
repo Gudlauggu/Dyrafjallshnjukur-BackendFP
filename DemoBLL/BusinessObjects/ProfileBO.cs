@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DAL.Entities
+namespace BLL.BusinessObjects
 {
-   public class Profile
+    public class ProfileBO
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

@@ -47,8 +47,9 @@ namespace DAL.Context
         public DbSet<ItemType> ItemType { get; set; }
         public DbSet<Pub> Pub { get; set; }
         public DbSet<Order>  Order { get; set; }
+        public DbSet<Profile> Profile { get; set; }
 
-        
+
 
     }
 }
