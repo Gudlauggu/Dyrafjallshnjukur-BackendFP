@@ -60,7 +60,26 @@ namespace CustomerRestAPI
                 app.UseDeveloperExceptionPage();
                 var facade = new BLLFacade();
 
+                //var user = facade.UserService.Create(
+                //    new UserBO()
+                //    {
+                //        Password = "hoho",
+                //        Role = "Admin",
+                //        Salt = "121221",
+                //        Username = "Moana"
 
+                //    });
+
+                //var profile = facade.ProfileService.Create(
+                //    new ProfileBO()
+                //    {
+                //        FirstName = "Sir Ian",
+                //        LastName = "McKellen",
+                //        Address = "Isengard",
+                //        Email = "TheOneTrueWizard@Hobbiton.me",
+                //        PhoneNumber = "22221177"
+                //    }
+                //    );
 
                 //var itemType = facade.ItemTypeService.Create(
                 //   new ItemTypeBO()

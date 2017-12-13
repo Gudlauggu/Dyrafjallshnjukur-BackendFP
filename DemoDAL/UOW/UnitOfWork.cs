@@ -11,8 +11,10 @@ namespace DAL.UOW
         public IItemTypeRepo ItemTypeRepo { get; internal set; }
         public IPubRepo PubRepo { get; internal set; }
         public IOrderRepo OrderRepo { get; internal set; }
+        public IProfileRepo ProfileRepo { get; internal set; }
+        public IUserRepo UserRepo { get; internal set; }
 
-       
+
         private Context.Context context;
 
         public UnitOfWork()
@@ -25,6 +27,8 @@ namespace DAL.UOW
             ItemTypeRepo = new ItemTypeRepo(context);
             PubRepo = new PubRepo(context);
             OrderRepo = new OrderRepo(context);
+            ProfileRepo = new ProfileRepo(context);
+            UserRepo = new UserRepo(context);
         }
 
 
