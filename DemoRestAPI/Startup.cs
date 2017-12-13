@@ -60,16 +60,16 @@ namespace CustomerRestAPI
                 app.UseDeveloperExceptionPage();
                 var facade = new BLLFacade();
 
-                var profile = facade.ProfileService.Create(
-                    new ProfileBO()
-                    {
-                        FirstName = "Sir Ian",
-                        LastName = "McKellen",
-                        Address = "Isengard",
-                        Email = "TheOneTrueWizard@Hobbiton.me",
-                        PhoneNumber = "22221177"
-                    }
-                    );
+                //var profile = facade.ProfileService.Create(
+                //    new ProfileBO()
+                //    {
+                //        FirstName = "Sir Ian",
+                //        LastName = "McKellen",
+                //        Address = "Isengard",
+                //        Email = "TheOneTrueWizard@Hobbiton.me",
+                //        PhoneNumber = "22221177"
+                //    }
+                //    );
 
                 //var itemType = facade.ItemTypeService.Create(
                 //   new ItemTypeBO()

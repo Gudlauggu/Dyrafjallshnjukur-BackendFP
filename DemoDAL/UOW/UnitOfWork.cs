@@ -19,7 +19,7 @@ namespace DAL.UOW
         public UnitOfWork()
         {
             context = new Context.Context();
-            //context.Database.EnsureDeleted();
+           // context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
             ItemRepo = new ItemRepo(context);
