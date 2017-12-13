@@ -33,5 +33,9 @@ namespace BLL
         {
             get { return new ProfileService(new DALFacade()); }
         }
+        public IUserService UserService
+        {
+            get { return new UserService(new DALFacade()); }
+        }
     }
 }
