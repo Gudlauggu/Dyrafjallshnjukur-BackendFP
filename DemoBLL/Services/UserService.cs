@@ -70,6 +70,8 @@ namespace BLL.Services
                 newUser.Password = u.Password;
                 newUser.Role = u.Role;
                 newUser.Salt = u.Salt;
+                newUser.PasswordHash = u.PasswordHash;
+                newUser.PasswordSalt = u.PasswordSalt;
 
                 uow.Complete();
                 return conv.Convert(newUser);

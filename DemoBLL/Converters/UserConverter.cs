@@ -17,7 +17,9 @@ namespace BLL.Converters
                 Password = u.Password,
                 Role = u.Role,
                 Salt = u.Salt,
-                Username = u.Username
+                Username = u.Username,
+                PasswordHash = u.PasswordHash,
+                PasswordSalt = u.PasswordSalt
                 
             };
         }
@@ -31,7 +33,10 @@ namespace BLL.Converters
                 Password = u.Password,
                 Role = u.Role,
                 Salt = u.Salt,
-                Username = u.Username
+                Username = u.Username,
+                PasswordHash = u.PasswordHash,
+                PasswordSalt = u.PasswordSalt
+
 
             };
         }
