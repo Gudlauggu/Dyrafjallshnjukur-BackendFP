@@ -61,6 +61,9 @@ namespace BLL.Services
         {
             using (var uow = facade.UnitOfWork)
             {
+
+
+               
                 var newProfile = uow.ProfileRepo.Get(profile.Id);
                 if (newProfile == null)
                 {

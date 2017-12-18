@@ -11,5 +11,11 @@ namespace BLL.BusinessObjects
         public string Password { get; set; }
         public string Salt { get; set; }
         public string Role { get; set; }
+<<<<<<< HEAD
+       
+=======
+        public byte[] PasswordHash { get; set; }
+        public byte[] PasswordSalt { get; set; }
+>>>>>>> d3ac035017e861c08938f7db785fdeacd09da49d
     }
 }

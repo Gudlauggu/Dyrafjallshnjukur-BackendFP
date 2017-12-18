@@ -16,8 +16,15 @@ namespace BLL.Converters
                 Id = u.Id,
                 Password = u.Password,
                 Role = u.Role,
-                Salt = u.Salt,
+<<<<<<< HEAD
                 Username = u.Username
+=======
+                Salt = u.Salt,
+                Username = u.Username,
+                PasswordHash = u.PasswordHash,
+                PasswordSalt = u.PasswordSalt
+>>>>>>> d3ac035017e861c08938f7db785fdeacd09da49d
+                
                 
             };
         }
@@ -30,8 +37,15 @@ namespace BLL.Converters
                 Id = u.Id,
                 Password = u.Password,
                 Role = u.Role,
-                Salt = u.Salt,
+<<<<<<< HEAD
                 Username = u.Username
+=======
+                Salt = u.Salt,
+                Username = u.Username,
+                PasswordHash = u.PasswordHash,
+                PasswordSalt = u.PasswordSalt
+
+>>>>>>> d3ac035017e861c08938f7db785fdeacd09da49d
 
             };
         }
