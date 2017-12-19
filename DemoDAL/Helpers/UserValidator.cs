@@ -6,9 +6,8 @@ using System.Text.RegularExpressions;
 
 namespace DAL.Helpers
 {
-    class UserValidator
+   public class UserValidator
     {
-        
         User _user;
         public UserValidator(User user)
         {

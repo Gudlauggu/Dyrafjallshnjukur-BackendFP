@@ -29,7 +29,7 @@ namespace BLLTest.Services
         ItemBO itemBOWithoutId = new ItemBO() { Name = "Beer" };
 
         //Test Object
-        IItemService _service;
+        //IItemService _service;
 
         [SetUp]
         public void Setup()
