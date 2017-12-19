@@ -75,6 +75,9 @@ namespace BLL.Services
                 newUser.Salt = u.Salt;
                 newUser.PasswordHash = u.PasswordHash;
                 newUser.PasswordSalt = u.PasswordSalt;
+<<<<<<< HEAD
+>>>>>>> d3ac035017e861c08938f7db785fdeacd09da49d
+=======
 >>>>>>> d3ac035017e861c08938f7db785fdeacd09da49d
 
                 uow.Complete();

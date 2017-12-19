@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Cors;
 using BLL;
 using BLL.BusinessObjects;
@@ -62,6 +63,8 @@ namespace AppRestAPI.Controllers
 
             return Ok(new JwtSecurityTokenHandler().WriteToken(token));
 =======
+=======
+>>>>>>> d3ac035017e861c08938f7db785fdeacd09da49d
 
 namespace AppRestAPI.Controllers
 {
@@ -70,6 +73,9 @@ namespace AppRestAPI.Controllers
         public IActionResult Index()
         {
             return View();
+<<<<<<< HEAD
+>>>>>>> d3ac035017e861c08938f7db785fdeacd09da49d
+=======
 >>>>>>> d3ac035017e861c08938f7db785fdeacd09da49d
         }
     }
