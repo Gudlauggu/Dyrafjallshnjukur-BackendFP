@@ -8,6 +8,9 @@ using Microsoft.Extensions.Logging;
 using System;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using AppRestAPI.Helpers;
 
 namespace CustomerRestAPI
 {
@@ -33,6 +36,21 @@ namespace CustomerRestAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add JWT based authentication
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateAudience = false,
+                    //ValidAudience = "TodoApiClient",
+                    ValidateIssuer = false,
+                    //ValidIssuer = "TodoApi",
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = JwtSecurityKey.Key,
+                    ValidateLifetime = true, //validate the expiration and not before values in the token
+                    ClockSkew = TimeSpan.FromMinutes(5) //5 minute tolerance for the expiration date
+                };
+            });
             services.AddMvc();
 
             // Register the Swagger generator, defining one or more Swagger documents
@@ -60,6 +78,11 @@ namespace CustomerRestAPI
                 app.UseDeveloperExceptionPage();
                 var facade = new BLLFacade();
 
+                //facade.UserService.Create(new UserBO() { Username = "Admin1", Password = "1234", Role = "Administrator" });
+                //facade.UserService.Create(new UserBO() { Username = "Admin2", Password = "1234", Role = "Administrator" });
+                //facade.UserService.Create(new UserBO() { Username = "User1", Password = "1234", Role = "User" });
+                //facade.UserService.Create(new UserBO() { Username = "User2", Password = "1234", Role = "User" });
+
                 //var user = facade.UserService.Create(
                 //    new UserBO()
                 //    {
@@ -78,6 +101,7 @@ namespace CustomerRestAPI
                 //        Address = "Isengard",
                 //        Email = "TheOneTrueWizard@Hobbiton.me",
                 //        PhoneNumber = "22221177"
+
                 //    }
                 //    );
 

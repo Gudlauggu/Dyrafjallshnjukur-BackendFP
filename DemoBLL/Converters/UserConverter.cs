@@ -16,9 +16,8 @@ namespace BLL.Converters
                 Id = u.Id,
                 Password = u.Password,
                 Role = u.Role,
-                Salt = u.Salt,
                 Username = u.Username
-                
+             
             };
         }
 
@@ -30,8 +29,8 @@ namespace BLL.Converters
                 Id = u.Id,
                 Password = u.Password,
                 Role = u.Role,
-                Salt = u.Salt,
                 Username = u.Username
+
 
             };
         }
