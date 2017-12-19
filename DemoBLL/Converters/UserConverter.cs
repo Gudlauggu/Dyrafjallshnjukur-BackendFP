@@ -6,9 +6,9 @@ using System.Text;
 
 namespace BLL.Converters
 {
-    class UserConverter
+    public class UserConverter : IConverter<User, UserBO>
     {
-        internal User Convert(UserBO u)
+        public User Convert(UserBO u)
         {
             if (u == null) { return null; }
             return new User()
@@ -21,7 +21,7 @@ namespace BLL.Converters
             };
         }
 
-        internal UserBO Convert(User u)
+        public UserBO Convert(User u)
         {
             if (u == null) { return null; }
             return new UserBO()

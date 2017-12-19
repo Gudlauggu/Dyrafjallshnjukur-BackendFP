@@ -6,9 +6,9 @@ using System.Text;
 
 namespace BLL.Converters
 {
-    class ProfileConverter
+    public class ProfileConverter : IConverter<Profile, ProfileBO>
     {
-        internal Profile Convert(ProfileBO pro)
+        public Profile Convert(ProfileBO pro)
         {
             if (pro == null) { return null; }
             return new Profile()
@@ -23,7 +23,7 @@ namespace BLL.Converters
             };
         }
 
-        internal ProfileBO Convert(Profile pro)
+        public ProfileBO Convert(Profile pro)
         {
             if (pro == null) { return null; }
 

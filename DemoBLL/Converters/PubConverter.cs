@@ -7,9 +7,9 @@ using System.Text;
 
 namespace BLL.Converters
 {
-    class PubConverter
+    public class PubConverter : IConverter<Pub, PubBO>
     {
-        internal Pub Convert(PubBO p)
+        public Pub Convert(PubBO p)
         {
             if (p == null) { return null; }
             return new Pub()
@@ -24,7 +24,7 @@ namespace BLL.Converters
             };
         }
 
-        internal PubBO Convert(Pub p)
+        public PubBO Convert(Pub p)
         {
             if (p == null) { return null; }
             return new PubBO()

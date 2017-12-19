@@ -7,9 +7,9 @@ using System.Text;
 
 namespace BLL.Converters
 {
-    class OrderConverter
+   public class OrderConverter : IConverter<Order, OrderBO>
     {
-        internal Order Convert(OrderBO o)
+        public Order Convert(OrderBO o)
         {
             if (o == null) { return null; }
             return new Order()
@@ -28,7 +28,7 @@ namespace BLL.Converters
             };
         }
 
-        internal OrderBO Convert(Order o)
+        public OrderBO Convert(Order o)
         {
             if (o == null) { return null; }
             
