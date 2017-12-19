@@ -55,11 +55,14 @@ namespace AppRestAPI.Controllers
 
             var token = new JwtSecurityToken(
                 new JwtHeader(new SigningCredentials(
-                    new SymmetricSecurityKey(Encoding.UTF8.GetBytes("BOErgeOsTSpiser AErter 123 STK I ALT!")),
+                    new SymmetricSecurityKey(Encoding.UTF8.GetBytes("HiThisIsTheBestEncodingString")),
                                              SecurityAlgorithms.HmacSha256)),
                 new JwtPayload(claims));
 
             return Ok(new JwtSecurityTokenHandler().WriteToken(token));
         }
+           
+        
     }
-}
+ }
+

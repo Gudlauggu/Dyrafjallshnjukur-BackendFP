@@ -78,6 +78,11 @@ namespace CustomerRestAPI
                 app.UseDeveloperExceptionPage();
                 var facade = new BLLFacade();
 
+                //facade.UserService.Create(new UserBO() { Username = "Admin1", Password = "1234", Role = "Administrator" });
+                //facade.UserService.Create(new UserBO() { Username = "Admin2", Password = "1234", Role = "Administrator" });
+                //facade.UserService.Create(new UserBO() { Username = "User1", Password = "1234", Role = "User" });
+                //facade.UserService.Create(new UserBO() { Username = "User2", Password = "1234", Role = "User" });
+
                 //var user = facade.UserService.Create(
                 //    new UserBO()
                 //    {
