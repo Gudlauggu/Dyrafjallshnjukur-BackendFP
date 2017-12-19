@@ -6,9 +6,9 @@ using System.Text;
 
 namespace BLL.Converters
 {
-    class ItemConverter
+    public class ItemConverter : IConverter<Item, ItemBO>
     {
-        internal Item Convert(ItemBO i)
+        public Item Convert(ItemBO i)
         {
             if (i == null) { return null; }
             return new Item()
@@ -20,7 +20,7 @@ namespace BLL.Converters
 
         }
 
-        internal ItemBO Convert(Item i)
+        public ItemBO Convert(Item i)
         {
             if (i == null) { return null; }
             return new ItemBO()
